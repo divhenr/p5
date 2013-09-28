@@ -1,7 +1,7 @@
 {
-    "db": "mongodb://localhost/mean",
+    "db": "mongodb://power5admin:power5admin@ds047478.mongolab.com:47478/heroku_app18372642",
     "app": {
-        "name": "MEAN - A Modern Stack - Production"
+        "name": "power 5"
     },
     "facebook": {
         "clientID": "APP_ID",

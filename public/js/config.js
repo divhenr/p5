@@ -1,7 +1,6 @@
 //Setting up route
-window.app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
+window.app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
     when('/teams/:teamId',
     {
         templateUrl: 'views/myteam/myteam.html'
@@ -38,5 +37,6 @@ window.app.config(['$routeProvider',
 window.app.config(['$locationProvider',
     function($locationProvider) {
         $locationProvider.hashPrefix("!");
+        $locationProvider.html5Mode(false);
     }
 ]);

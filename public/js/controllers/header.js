@@ -2,10 +2,16 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     $scope.global = Global;
 
     $scope.menu = [{
-        "title": "Articles",
-        "link": "articles"
+        "title": "my team",
+        "link": "myteam"
     }, {
-        "title": "Create New Article",
-        "link": "articles/create"
+        "title": "players",
+        "link": "/teams/:teamId"
     }];
+
+    if(Global.authenticated){
+  		if(user){
+		      $scope.team = user.team;
+		  }
+		}
 }]);

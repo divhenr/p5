@@ -52,19 +52,47 @@ exports.session = function(req, res) {
 exports.create = function(req, res) {
     var user = new User(req.body);
 
-    user.provider = 'local';
-    user.save(function(err) {
-        if (err) {
-            return res.render('users/signup', {
-                errors: err.errors,
-                user: user
-            });
-        }
-        req.logIn(user, function(err) {
-            if (err) return next(err);
-            return res.redirect('/');
-        });
-    });
+    user.provider = 'local'
+
+  Player.find({"team":null}).limit(5).exec(
+    function(err, players) {
+      if(players.length < 5){
+        return res.redirect('/error');
+      }
+      var team = new Team({
+        name: user.name + " - Team",
+        players: players
+      });
+      team.save();
+      players.forEach(function(player) {
+              player.team = team;
+              player.save();
+         });
+      user.team = team;
+      user.save(function (err) {
+      if (err) {
+        return res.render('users/signup', { errors: err.errors, user: user })
+      }
+      req.logIn(user, function(err) {
+        if (err) return next(err)
+        return res.redirect('#!/teams/'+ team._id)
+      })
+    })
+ });
+
+    // user.provider = 'local';
+    // user.save(function(err) {
+    //     if (err) {
+    //         return res.render('users/signup', {
+    //             errors: err.errors,
+    //             user: user
+    //         });
+    //     }
+    //     req.logIn(user, function(err) {
+    //         if (err) return next(err);
+    //         return res.redirect('/');
+    //     });
+    // });
 };
 
 /**

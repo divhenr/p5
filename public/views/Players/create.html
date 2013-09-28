@@ -1,0 +1,27 @@
+<section ng-controller="PlayerController">
+	<h1>create player</h1>
+<br/>
+<form class="well" ng-submit="create()">
+          <fieldset>
+            <legend>Player</legend>
+            <label>Name</label>
+            <input type="text" ng-model="player.name" id="name" placeholder="Name">
+            <label>Country</label>
+            <input type="text" ng-model="player.country" id="country" placeholder="Country">
+<label>Defend</label>
+            <input type="number" ng-model="player.defend" id="defend" placeholder="Defend">
+            <label>Attack</label>
+            <input type="number" ng-model="player.attack" id="attack" placeholder="Attack">
+<label>Played</label>
+            <input type="number" ng-model="player.played" id="played" placeholder="Played">
+            <label>Goals</label>
+            <input type="number" ng-model="player.goals" id="goals" placeholder="Goals">
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="#!/players" class="btn">Cancel</a>
+            </div>
+          </fieldset>
+        </form>
+
+</section>

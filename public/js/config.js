@@ -2,19 +2,30 @@
 window.app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/articles', {
-            templateUrl: 'views/articles/list.html'
-        }).
-        when('/articles/create', {
-            templateUrl: 'views/articles/create.html'
-        }).
-        when('/articles/:articleId/edit', {
-            templateUrl: 'views/articles/edit.html'
-        }).
-        when('/articles/:articleId', {
-            templateUrl: 'views/articles/view.html'
-        }).
-        when('/', {
+    when('/teams/:teamId',
+    {
+        templateUrl: 'views/myteam/myteam.html'
+    })
+    .when('/teams/create',
+    {
+        templateUrl: 'views/myteam/create.html'
+    })
+    .when('/players',
+    {
+        templateUrl: 'views/players/players.html'
+    })
+    .when('/players/create',
+    {
+        templateUrl: 'views/players/create.html'
+    })
+    .when('/players/:playerId/edit',
+    {
+        templateUrl: 'views/players/edit.html'
+    })
+    .when('/players/:playerId',
+    {
+        templateUrl: 'views/players/view.html'
+    }).when('/', {
             templateUrl: 'views/index.html'
         }).
         otherwise({

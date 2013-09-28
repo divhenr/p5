@@ -1,0 +1,46 @@
+<section ng-controller="MyTeamController" ng-init="findOne()">
+	<h1>{{team.name}}</h1>
+<br/>
+<!-- <a href="#!/teams/create">Create Team</a> -->
+<div class="row-fluid">
+    <div class="span3">
+      <ul class="nav nav-list">  
+        <li class="nav-header">Team overview</li>  
+        <li></li>  
+        <li class="nav-header">Last 5 matches</li>  
+        <li></li>  
+</ul>  
+    </div>
+	    <div class="span9">
+      <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Defend</th>
+          <th>Attack</th>
+          <th>App/Goals</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in team.players">
+          <td>{{player.name || 0}}</td>
+          <td>{{player.defend || 0}}</td>
+          <td>{{player.attack || 0}}</td>
+          <td>{{player.played || 0 }} / {{player.goals || 0}} </td>
+        </tr>
+        
+      </tbody>
+    </table>
+<div class="row-fluid">
+<div class="span4">
+  <label>Defend {{team.totalDefend}}%</label>
+<canvas width="200" height="200" val="team.totalDefend" donut-graph></canvas>
+</div>
+<div class="span4">
+  <label>Attack {{team.totalAttack}}%</label>
+<canvas width="200" height="200" val="team.totalAttack" donut-graph></canvas>
+</div></div>
+    </div>
+  </div>
+
+	</section>

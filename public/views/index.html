@@ -1,3 +1,8 @@
 <section data-ng-controller="IndexController">
-	<h1>This is the home view</h1>
+	<h1>Welcome to power 5</h1>
+	<br/>
+<p ng-hide="global.authenticated">Please login to start playing</p>
+<div ng-show="global.authenticated">
+<h3>Thank you for login, <a href="#!/teams/{{team}}">go to your team</a>
+	</div>
 </section>

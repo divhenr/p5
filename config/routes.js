@@ -62,16 +62,35 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the userId param
     app.param('userId', users.user);
 
-    //Article Routes
-    var articles = require('../app/controllers/articles');
-    app.get('/articles', articles.all);
-    app.post('/articles', auth.requiresLogin, articles.create);
-    app.get('/articles/:articleId', articles.show);
-    app.put('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.update);
-    app.del('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.destroy);
+    // //Article Routes
+    // var articles = require('../app/controllers/articles');
+    // app.get('/articles', articles.all);
+    // app.post('/articles', auth.requiresLogin, articles.create);
+    // app.get('/articles/:articleId', articles.show);
+    // app.put('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.update);
+    // app.del('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.destroy);
 
-    //Finish with setting up the articleId param
-    app.param('articleId', articles.article);
+    // //Finish with setting up the articleId param
+    // app.param('articleId', articles.article);
+
+// player routes
+  var players = require('../app/controllers/player')
+  app.get('/players', players.all)
+  app.post('/players', players.create)
+  app.get('/players/:playerId', players.show)
+  app.put('/players/:playerId', players.update)
+  app.del('/players/:playerId', players.destroy)
+  app.param('playerId', players.player)
+
+  // team routes
+  var teams = require('../app/controllers/team')
+  app.get('/teams', teams.all)
+  app.post('/teams', auth.requiresLogin, teams.create)
+  app.get('/teams/:teamId', teams.show)
+  app.put('/teams/:teamId', auth.requiresLogin, teams.update)
+  app.del('/teams/:teamId', auth.requiresLogin, teams.destroy)
+  app.param('teamId', teams.team)
+    
 
     //Home route
     var index = require('../app/controllers/index');

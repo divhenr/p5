@@ -1,6 +1,4 @@
-  window.angular.module('ngff.services.myTeam', [])
-  .factory('MyTeam', ['$resource',
-    function($resource){
+  window.angular.module('mean.myTeam').factory('MyTeam', ['$resource', function($resource){
       return $resource(
         '/teams/:teamId',
         {

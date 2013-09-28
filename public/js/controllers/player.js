@@ -1,6 +1,5 @@
 
-window.angular.module('ngff.controllers.player', [])
-.controller('PlayerController', ['$scope','$routeParams','$location','Global','Player',
+window.angular.module('mean.player').controller('PlayerController', ['$scope','$routeParams','$location','Global','Player',
 	function ($scope, $routeParams, $location, Global, Player) {
 		$scope.global = Global;
 

@@ -1,4 +1,4 @@
-window.angular.module('ngff.directives', [])
+window.angular.module('mean.directives', [])
 .directive('donutGraph', function () {
 	return {
 		restrict: 'A',

@@ -1,4 +1,4 @@
-window.angular.module('ngff.controllers.myTeam', [])
+window.angular.module('mean.myTeam', [])
 .controller('MyTeamController', ['$scope','$routeParams','$location','Global','MyTeam',
 	function ($scope, $routeParams, $location, Global, MyTeam) {
       $scope.global = Global;

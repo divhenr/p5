@@ -36,7 +36,7 @@ window.app.config(['$routeProvider', function($routeProvider) {
 //Setting HTML5 Location Mode
 window.app.config(['$locationProvider',
     function($locationProvider) {
-        $locationProvider.hashPrefix("!");
         $locationProvider.html5Mode(false);
+        $locationProvider.hashPrefix("!");
     }
 ]);

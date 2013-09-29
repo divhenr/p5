@@ -1,0 +1,24 @@
+<section ng-controller="RankController" ng-init="find()">   
+<h1>Rank</h1>   
+      <table class="table">
+      <thead>
+        <tr>
+          <th>Team Name</th>
+          <th>Played</th>
+          <th>Win</th>
+          <th>Lose</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="team in teams">
+          <td>{{team.name || 0}}</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </section>

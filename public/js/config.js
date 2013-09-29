@@ -5,9 +5,9 @@ window.app.config(['$routeProvider', function($routeProvider) {
     {
         templateUrl: 'views/myteam/myteam.html'
     })
-    .when('/teams/create',
+    .when('/rank',
     {
-        templateUrl: 'views/myteam/create.html'
+        templateUrl: 'views/rank/view.html'
     })
     .when('/players',
     {
@@ -25,11 +25,10 @@ window.app.config(['$routeProvider', function($routeProvider) {
     {
         templateUrl: 'views/players/view.html'
     }).when('/', {
-            templateUrl: 'views/index.html'
-        }).
-        otherwise({
-            redirectTo: '/'
-        });
+        templateUrl: 'views/index.html'
+    }).otherwise({
+        redirectTo: '/'
+    });
     }
 ]);
 

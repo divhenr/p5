@@ -4,6 +4,9 @@
 <!-- <a href="#!/teams/create">Create Team</a> -->
 <div class="row-fluid">
     <div class="span3">
+      <div class="three columns alpha mobile-hide">
+           <img class="scale-with-grid" src="img/crest.png">
+            </div>
       <ul class="nav nav-list">  
         <li class="nav-header">Team overview</li>  
         <li></li>  
@@ -15,6 +18,7 @@
       <table class="table">
       <thead>
         <tr>
+          <th></th>
           <th>Player</th>
           <th>Defend</th>
           <th>Attack</th>
@@ -23,6 +27,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="player in team.players">
+          <td><img class="flag flag-{{player.country | lowercase}}" alt="{{player.country}}" /></td>
           <td>{{player.name || 0}}</td>
           <td>{{player.defend || 0}}</td>
           <td>{{player.attack || 0}}</td>

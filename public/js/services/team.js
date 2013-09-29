@@ -1,4 +1,4 @@
-  window.angular.module('mean.myTeam').factory('MyTeam', ['$resource', function($resource){
+  window.angular.module('mean.team').factory('Team', ['$resource', function($resource){
       return $resource(
         '/teams/:teamId',
         {

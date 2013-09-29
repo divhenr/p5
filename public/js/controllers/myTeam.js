@@ -1,9 +1,9 @@
-window.angular.module('mean.myTeam').controller('MyTeamController', ['$scope','$routeParams','$location','Global','MyTeam',
-	function ($scope, $routeParams, $location, Global, MyTeam) {
+window.angular.module('mean.team').controller('MyTeamController', ['$scope','$routeParams','$location','Global','Team',
+	function ($scope, $routeParams, $location, Global, Team) {
       $scope.global = Global;
 
       $scope.create = function(){
-		var team = new MyTeam({ 
+		var team = new Team({ 
 				name: this.team.name,
 				user: $scope.global
 			});
@@ -17,13 +17,13 @@ window.angular.module('mean.myTeam').controller('MyTeamController', ['$scope','$
       }
 
       $scope.find = function (query) {
-			MyTeam.query(query, function (teams) {
+			Team.query(query, function (teams) {
 				$scope.teams = teams;
 			});
 		};
 
 		$scope.findOne = function () {
-  			MyTeam.get({ teamId: $routeParams.teamId }, function (team) {
+  			Team.get({ teamId: $routeParams.teamId }, function (team) {
     			$scope.team = team;
     			var totalDefend = 0, totalAttack = 0;
 		      	$.each(team.players, function(){

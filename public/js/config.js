@@ -11,7 +11,7 @@ window.app.config(['$routeProvider', function($routeProvider) {
     })
     .when('/players',
     {
-        templateUrl: 'views/players/players.html'
+        templateUrl: 'views/Players/players.html'
     })
     .when('/players/create',
     {

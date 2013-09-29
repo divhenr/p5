@@ -1,5 +1,4 @@
-window.angular.module('mean.myTeam', [])
-.controller('MyTeamController', ['$scope','$routeParams','$location','Global','MyTeam',
+window.angular.module('mean.myTeam').controller('MyTeamController', ['$scope','$routeParams','$location','Global','MyTeam',
 	function ($scope, $routeParams, $location, Global, MyTeam) {
       $scope.global = Global;
 
@@ -26,21 +25,14 @@ window.angular.module('mean.myTeam', [])
 		$scope.findOne = function () {
   			MyTeam.get({ teamId: $routeParams.teamId }, function (team) {
     			$scope.team = team;
-  			})
-		   .$promise.then(
-		      //success
-		      function( value ){
-		      	var totalDefend = 0, totalAttack = 0;
-		      	$.each(value.players, function(){
+    			var totalDefend = 0, totalAttack = 0;
+		      	$.each(team.players, function(){
 	      			totalAttack += this.attack;
 	      			totalDefend += this.defend;
 		      	});
-	      		value.totalDefend = totalDefend / value.players.length;
-	      		value.totalAttack = totalAttack / value.players.length;
-		      },
-		      //error
-		      function( error ){}
-		   );
+	      		team.totalDefend = totalDefend / team.players.length;
+	      		team.totalAttack = totalAttack / team.players.length;
+  			});
 		};
 
     }]);

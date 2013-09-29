@@ -1,7 +1,7 @@
 {
     "db": "mongodb://localhost/mean-dev",
     "app": {
-        "name": "MEAN - A Modern Stack - Development"
+        "name": "Power 5 - A new football experience"
     },
     "facebook": {
         "clientID": "APP_ID",

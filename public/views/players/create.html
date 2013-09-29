@@ -7,7 +7,9 @@
             <label>Name</label>
             <input type="text" ng-model="player.name" id="name" placeholder="Name">
             <label>Country</label>
-            <input type="text" ng-model="player.country" id="country" placeholder="Country">
+            <select id="countries" ng-model="player.country" name="countries">
+              <option value="{{country.code}}" ng-repeat="country in listOfCountries">{{country.name}}</option>
+            </select>
 <label>Defend</label>
             <input type="number" ng-model="player.defend" id="defend" placeholder="Defend">
             <label>Attack</label>
@@ -23,5 +25,4 @@
             </div>
           </fieldset>
         </form>
-
 </section>

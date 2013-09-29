@@ -1,9 +1,9 @@
 {
     "name": "mean",
-    "description": "MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).",
+    "description": "Power 5 - A new football experience",
     "version": "1.0.0",
     "private": false,
-    "author": "Amos Haviv",
+    "author": "Henrique Graca",
     "repository": {
         "type": "git",
         "url": "https://github.com/linnovate/mean.git"

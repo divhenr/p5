@@ -11,7 +11,7 @@ window.app.config(['$routeProvider', function($routeProvider) {
     })
     .when('/players',
     {
-        templateUrl: 'views/Players/players.html'
+        templateUrl: 'views/players/players.html'
     })
     .when('/players/create',
     {
@@ -35,8 +35,7 @@ window.app.config(['$routeProvider', function($routeProvider) {
 
 //Setting HTML5 Location Mode
 window.app.config(['$locationProvider',
-    function($locationProvider) {
-        $locationProvider.html5Mode(false);
+    function($locationProvider) { 
         $locationProvider.hashPrefix("!");
     }
 ]);

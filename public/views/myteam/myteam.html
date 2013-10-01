@@ -1,51 +1,46 @@
 <section ng-controller="MyTeamController" ng-init="findOne()">
-	<h1>{{team.name}}</h1>
-<br/>
 <!-- <a href="#!/teams/create">Create Team</a> -->
-<div class="row-fluid">
-    <div class="span3">
-      <div class="three columns alpha mobile-hide">
+    <div class="three columns alpha mobile-hide">
            <img class="scale-with-grid" src="img/crest.png">
+          <div class="details rank">#5,520</div>
+                <div class="details coins">1,900 coins</div>
+                <button>Edit Team Details</button>
+                <hr />
+                <p class="light">Last 5 Matches</p>
+                 <button>View All Results</button>
+                <hr />
             </div>
-      <ul class="nav nav-list">  
-        <li class="nav-header">Team overview</li>  
-        <li></li>  
-        <li class="nav-header">Last 5 matches</li>  
-        <li></li>  
-</ul>  
-    </div>
-	    <div class="span9">
-      <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Player</th>
-          <th>Defend</th>
-          <th>Attack</th>
-          <th>App/Goals</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="player in team.players">
-          <td><img class="flag flag-{{player.country | lowercase}}" alt="{{player.country}}" /></td>
-          <td>{{player.name || 0}}</td>
-          <td>{{player.defend || 0}}</td>
-          <td>{{player.attack || 0}}</td>
-          <td>{{player.played || 0 }} / {{player.goals || 0}} </td>
-        </tr>
-        
-      </tbody>
-    </table>
-<div class="row-fluid">
-<div class="four columns">
-  <label>Defend {{team.totalDefend}}%</label>
-<canvas width="200" height="200" val="team.totalDefend" donut-graph></canvas>
-</div>
-<div class="three columns">
-  <label>Attack {{team.totalAttack}}%</label>
-<canvas width="200" height="200" val="team.totalAttack" donut-graph></canvas>
-</div></div>
-    </div>
-  </div>
-
+    <div class="eight columns omega">
+			    <h1 class="light">{{team.name}}</h1>
+                <p>Est. 01/01/2013</p>
+                <hr />
+                <table>
+                    <thead>
+                        <th class="mobile-hide">Country</th>
+                        <th>Player</th>
+                        <th>Defend</th>
+                        <th>Attack</th>
+                        <th class="mobile-hide">Apps/Gls</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="player in team.players">
+                            <td class="mobile-hide"><img class="flag flag-{{player.country | lowercase}}" alt="{{player.country}}" /></td>
+                            <td class="stretch-col">{{player.name || 0}}</td>
+                            <td>{{player.defend || 0}}</td>
+                            <td>{{player.attack || 0}}</td>
+                            <td class="mobile-hide">{{player.played || 0 }} / {{player.goals || 0}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+        <div class="four columns alpha">
+          <label>Defend {{team.totalDefend}}%</label>
+        <canvas width="140" height="140" val="team.totalDefend" donut-graph></canvas>
+        </div>
+    <div class="four columns omega">
+          <label>Attack {{team.totalAttack}}%</label>
+        <canvas width="140" height="140" val="team.totalAttack" donut-graph></canvas>
+        </div>
+		</div>
+    
 	</section>

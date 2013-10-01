@@ -83,7 +83,7 @@
 
 /* #Typography
 ================================================== */
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, table tr td {
 		color: #FFF;
 		font-family: "bebas_neueregular", serif;
 		font-weight: normal; }
@@ -111,7 +111,11 @@
 	blockquote cite:before { content: "\2014 \0020"; }
 	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
 
-	hr { border: solid #5e5e5e; border-width: 1px 0 0; clear: both; margin: 10px 0 10px; height: 0; }
+	hr { border: solid #5e5e5e; border-width: 1px 0 0; clear: both; margin: 15px 0 15px; height: 0; }
+
+    th { font-style: italic;}
+
+table tr td {font-size: 28px; }
 
 
 /* #Links
@@ -126,6 +130,7 @@
         font-size:17px;
         font-family: "bebas_neueregular", serif;
         text-decoration:none;
+        text-align: center;
 }
     .nav a:hover {
         color:#ffd200;
@@ -161,66 +166,37 @@
 /* #Buttons
 ================================================== */
 
-	.button,
-	button,
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"] {
-		background: #eee; /* Old browsers */
-		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
-	  border: 1px solid #aaa;
-	  border-top: 1px solid #ccc;
-	  border-left: 1px solid #ccc;
-	  -moz-border-radius: 3px;
-	  -webkit-border-radius: 3px;
-	  border-radius: 3px;
-	  color: #444;
-	  display: inline-block;
-	  font-size: 11px;
-	  font-weight: bold;
-	  text-decoration: none;
-	  text-shadow: 0 1px rgba(255, 255, 255, .75);
-	  cursor: pointer;
-	  margin-bottom: 20px;
-	  line-height: normal;
-	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+        background: #ffd200;
+        border: 0;
+        color: #000;
+        display: inline-block;
+        font-size: 17px;
+        font-family: "bebas_neueregular", serif;
+        text-decoration: none;
+        cursor: pointer;
+        line-height: normal;
+        padding: 7px 10px;
+    }
 
 	.button:hover,
 	button:hover,
 	input[type="submit"]:hover,
 	input[type="reset"]:hover,
-	input[type="button"]:hover {
-		color: #222;
-		background: #ddd; /* Old browsers */
-		background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
-	  border: 1px solid #888;
-	  border-top: 1px solid #aaa;
-	  border-left: 1px solid #aaa; }
-
-	.button:active,
+	input[type="button"]:hover,
+    .button:active,
 	button:active,
 	input[type="submit"]:active,
 	input[type="reset"]:active,
 	input[type="button"]:active {
-		border: 1px solid #666;
-		background: #ccc; /* Old browsers */
-		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
-		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
-		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
-		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
-		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+	    background: #e6bd00;
+    }
+
+
 
 	.button.full-width,
 	button.full-width,
@@ -294,6 +270,29 @@
 		font-size: 13px;
 		color: #444; }
 
+/* #Tables
+================================================== */
+    table, th, tr, td {
+        vertical-align:middle;
+        text-align: left;
+        
+    }
+
+    th {
+        padding-bottom: 10px;
+        padding-right:10px;
+    }
+
+
+    table tr td {
+        width: auto;
+        padding-right:10px;
+        padding-bottom: 2px;
+    }
+    .stretch-col {
+        width: 100%;
+    }
+
 /* #Misc
 ================================================== */
 	.remove-bottom { margin-bottom: 0 !important; }
@@ -302,3 +301,22 @@
     .add-top { margin-top: 20px !important; }
 
 
+/* #Team Details
+================================================== */
+
+    .details {
+    
+        background-position:top left;
+        background-repeat:no-repeat;
+        padding-left: 30px;
+        padding-top:6px;
+        font-style:italic;
+        height:25px;
+        margin-bottom:3px;
+    }
+    .coins {
+        background-image:url('../img/coins-icon.png');
+    }
+    .rank {
+        background-image:url('../img/rank-icon.png');
+    }

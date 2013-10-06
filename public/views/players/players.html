@@ -3,7 +3,7 @@
 <br/>
 <a href="#!/players/create">Create Player</a>
 <br/>
-<table class="table">
+<table>
       <thead>
         <tr>
           <th>Player</th>
@@ -18,8 +18,8 @@
       <tbody>
         <tr ng-repeat="player in players">
           <!-- <td><a href="#!/players/{{ player._id }}">{{player.name}}</a></td> -->
-          <td>{{player.name}}</td>
-          <td><img class="flag flag-{{player.country | lowercase}}" alt="{{player.country}}" /></td>
+          <td  class="stretch-col">{{player.name}}</td>
+           <td class="f32 mobile-hide"><div class="flag {{player.country | lowercase}}" /></td>
           <td>{{player.defend || 0}}</td>
           <td>{{player.attack || 0}}</td>
           <td>{{player.played || 0}}</td>

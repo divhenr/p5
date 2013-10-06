@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="player in team.players">
-                            <td class="mobile-hide"><img class="flag flag-{{player.country | lowercase}}" alt="{{player.country}}" /></td>
+                            <td class="f32 mobile-hide"><div class="flag {{player.country | lowercase}}" /></td>
                             <td class="stretch-col">{{player.name || 0}}</td>
                             <td>{{player.defend || 0}}</td>
                             <td>{{player.attack || 0}}</td>

@@ -33,14 +33,32 @@
                     </tbody>
                 </table>
                 <hr />
-        <div class="four columns alpha">
-          <label>Defend {{team.totalDefend}}%</label>
-        <canvas width="140" height="140" val="team.totalDefend" donut-graph></canvas>
+        <div class="five columns alpha">
+            <p class="light">Top Goalscorer (current)</p>
+            <p>L. Messi</p>
+            <br />
+            <p class="light">Top Goalscorer (all-time)</p>
+             <p>L. Messi</p>
+            <br />
+            <p class="light">Most Appearances (current)</p>
+             <p>L. Messi</p>
+            <br />
+            <p class="light">Most Appearances (all-time)</p>
+             <p>L. Messi</p>
         </div>
-    <div class="four columns omega">
-          <label>Attack {{team.totalAttack}}%</label>
-        <canvas width="140" height="140" val="team.totalAttack" donut-graph></canvas>
+        <div class="three columns omega gr mobile-hide">
+            <p>Team Attack</p>
+            <div class="graph-holder">
+                <label class="graph-label">{{team.totalAttack}}</label>
+                <canvas width="140" height="140" val="team.totalAttack" donut-graph></canvas>
+             </div>
+            <div class="graph-holder" style="margin-top: -26px; z-index: -1;">
+                <label class="graph-label">{{team.totalDefend}}</label>
+                <canvas width="140" height="140" val="team.totalDefend" donut-graph></canvas>
+            </div>
+            <p class="add-top-10">Team Defend</p>
         </div>
-		</div>
+            
+</div>
     
 	</section>

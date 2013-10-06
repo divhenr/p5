@@ -294,6 +294,10 @@ table tr td {font-size: 28px; }
     }
     .stretch-col {
         width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 248px;
     }
 
 /* #Misc
@@ -302,6 +306,7 @@ table tr td {font-size: 28px; }
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
     .add-top { margin-top: 20px !important; }
+    .add-top-10 { margin-top: 10px !important; }
 
 
 /* #Team Details
@@ -322,4 +327,26 @@ table tr td {font-size: 28px; }
     }
     .rank {
         background-image:url('../img/rank-icon.png');
+    }
+    .graph-holder {
+        position:relative;
+        width:140px;
+        height:140px;
+    }
+    .graph-label {
+        font-size: 56px;
+        font-family: "bebas_neueregular", serif;
+        font-weight: normal;
+        position:absolute;
+        width: 80px;
+        height:56px;
+        text-align: center;
+        left: 50%;
+        margin-left: -40px;
+        top:50%;
+        margin-top:-28px
+    }
+    .gr p {
+        width:140px;
+        text-align:center;
     }

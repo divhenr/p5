@@ -13,12 +13,12 @@ window.angular.module('mean.directives', [])
 					var data = [
 					{
 						value: newValue,
-						color:"#F7464A"
+						color: "#ffd200"
 					},
 
 					{
 						value : 100 - newValue,
-						color : "#4D5360"
+						color: "#434343"
 					}
 
 					]

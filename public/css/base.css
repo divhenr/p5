@@ -53,11 +53,18 @@
 
 /* #Basic Styles
 ================================================== */
+    html { 
+      background: url(../img/bg.jpg) no-repeat top center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-color:#000;
+
+    }
 	body {
-		background-image:url('../img/bg.jpg');
-        background-position:top center;
-        background-repeat:no-repeat;
-        background-color:#000;
+		
+        
 		font-family: Georgia, serif;
         font-size:12px;
 		color: #FFF;
@@ -95,7 +102,7 @@
 	h6 { font-size: 14px; line-height: 21px; }
 	.light { color: #b0b0b0; }
 
-	p { margin: 0 0 10px 0; font-style:italic; }
+	p { margin: 0 0 10px 0; font-style:italic; line-height:16px; }
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #FFF  }
 
@@ -161,9 +168,16 @@ table tr td {font-size: 28px; }
 		max-width: 100%;
 		height: auto; }
 
+    .home-logo-small {
+        max-width:77px;
+        float:left;
+        margin-top:8px;
+    }
+
 
 /* #Buttons
 ================================================== */
+    
 
     .button,
     button,
@@ -180,6 +194,17 @@ table tr td {font-size: 28px; }
         cursor: pointer;
         line-height: normal;
         padding: 7px 10px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+        margin-left:0px;
+        margin-top:0px;
+        text-align:left;
+        white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+
     }
 
 	.button:hover,
@@ -214,12 +239,12 @@ table tr td {font-size: 28px; }
     padding: 0;
 	}
 
+    
 
 /* #Forms
 ================================================== */
 
-	form {
-		margin-bottom: 20px; }
+	
 	fieldset {
 		margin-bottom: 20px; }
 	input[type="text"],
@@ -227,33 +252,36 @@ table tr td {font-size: 28px; }
 	input[type="email"],
 	textarea,
 	select {
-		border: 1px solid #ccc;
-		padding: 6px 4px;
+		border: 1px solid #ffd200;
+		padding: 6px 10px;
 		outline: none;
-		-moz-border-radius: 2px;
-		-webkit-border-radius: 2px;
-		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #777;
-		margin: 0;
-		width: 210px;
+		font-size: 17px;
+        font-family: "bebas_neueregular", serif;
+		color: #9b9b9b;
+		margin-bottom: 8px;
+        margin-right: 8px;
+        margin-top: 0;
+        margin-left: 0;
+		width: 100%;
 		max-width: 100%;
 		display: block;
-		margin-bottom: 20px;
-		background: #fff; }
+		background: none;
+        background-image:url('../img/input-bg.png');
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+
+        
+
+	}
 	select {
 		padding: 0; }
 	input[type="text"]:focus,
 	input[type="password"]:focus,
 	input[type="email"]:focus,
 	textarea:focus {
-		border: 1px solid #aaa;
- 		color: #444;
- 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
-		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
-		box-shadow:  0 0 3px rgba(0,0,0,.2); }
-	textarea {
-		min-height: 60px; }
+ 		color: #FFF;
+ }
 	label,
 	legend {
 		display: block;
@@ -269,6 +297,38 @@ table tr td {font-size: 28px; }
 		font-size: 13px;
 		color: #444; }
 
+    .sign-in {
+        float:right;
+        margin-top:15px;
+        margin-bottom:10px;
+        
+    }
+
+    .sign-in input[type="text"],
+	.sign-in input[type="password"],
+	.sign-in input[type="email"],
+	.sign-in textarea,
+	.sign-in select {
+        width:165px;
+        display:inline-block;
+    }
+    .sign-in p {
+        display:inline-block;
+        text-align:right;
+        vertical-align: middle;
+        margin-right:8px;
+        margin-bottom:4px;
+        width:70px;
+
+    }
+    .fb-button {
+        background-image:url('../img/facebook-logo.png' ) !important;
+        background-position: 7px 4px !important;
+        background-repeat: no-repeat !important;
+        padding-left:38px !important;
+    }
+    
+  
 /* #Tables
 ================================================== */
     table, th, tr, td {
@@ -303,7 +363,16 @@ table tr td {font-size: 28px; }
 	.add-bottom { margin-bottom: 20px !important; }
     .add-top { margin-top: 20px !important; }
     .add-top-10 { margin-top: 10px !important; }
+    .stretch-width { width:100%;}
 
+
+ /* #Splash Home
+================================================== */
+
+    .step  {
+        text-align:center;
+        margin-top:10px;
+    }
 
 /* #Team Details
 ================================================== */

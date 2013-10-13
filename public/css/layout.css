@@ -24,19 +24,56 @@
 ================================================== */
 
 	/* Smaller than standard 960 (devices and browsers) */
-	@media only screen and (max-width: 959px) {     
+	@media only screen and (max-width: 959px) {
+        .sign-in {
+            float:none;
+        } 
+        .home-logo-small {
+            float:none;
+            max-width: 100%;
+		    height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }    
+        .sign-in p {
+            display:block;
+            text-align:left;
+            vertical-align: top;
+            margin-right:8px;
+            margin-bottom:4px;
+            width:100%;
+
+        }
 	}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+	}
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
         .mobile-hide {
             display: none !important;
         }
+                 .sign-in input[type="text"],
+	    .sign-in input[type="password"],
+	    .sign-in input[type="email"],
+	    .sign-in textarea,
+	    .sign-in select {
+            width:100%;
+            display:block;
+        }
+        .button,
+        button,
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            width:100%;
+        }
+        
 	}
-
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {}
 

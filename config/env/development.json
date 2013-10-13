@@ -1,5 +1,5 @@
 {
-    "db": "mongodb://power5admin:power5admin@ds047478.mongolab.com:47478/heroku_app18372642",
+    "db": "mongodb://localhost/mean-dev",
     "app": {
         "name": "Power 5 - A new football experience"
     },

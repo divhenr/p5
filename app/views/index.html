@@ -1,0 +1,15 @@
+<% if (user == 'null') { %>
+
+<% layout('/layouts/splash') -%>
+
+<% } else { %>
+
+<% layout('/layouts/default') -%>
+
+<% } %>
+
+
+<div class="eleven columns" data-ng-view></div>
+<script type="text/javascript">
+    window.user = <%-user%>;
+</script>

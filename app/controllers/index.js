@@ -8,6 +8,13 @@ var mongoose = require('mongoose'),
 
 exports.render = function(req, res) {
     res.render('index', {
-        user: req.user ? JSON.stringify(req.user) : "null"
+        user: req.user ?
+            JSON.stringify({
+                id: req.user._id,
+                name: req.user.name,
+                username: req.user.username,
+                email:req.user.email,
+                team: req.user.team
+            }) : "null"
     });
 };

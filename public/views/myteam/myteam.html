@@ -1,5 +1,4 @@
 <section ng-controller="MyTeamController" ng-init="findOne()">
-<!-- <a href="#!/teams/create">Create Team</a> -->
     <div class="three columns alpha mobile-hide">
            <img class="scale-with-grid" src="img/crest.png">
           <div class="details rank">#5,520</div>
@@ -49,12 +48,12 @@
         <div class="three columns omega gr mobile-hide">
             <p>Team Attack</p>
             <div class="graph-holder">
-                <label class="graph-label">{{team.totalAttack}}</label>
-                <canvas width="140" height="140" val="team.totalAttack" donut-graph></canvas>
+                <label class="graph-label">{{team.totalattack}}</label>
+                <canvas width="140" height="140" val="team.totalattack" donut-graph></canvas>
              </div>
             <div class="graph-holder" style="margin-top: -26px; z-index: -1;">
-                <label class="graph-label">{{team.totalDefend}}</label>
-                <canvas width="140" height="140" val="team.totalDefend" donut-graph></canvas>
+                <label class="graph-label">{{team.totaldefend}}</label>
+                <canvas width="140" height="140" val="team.totaldefend" donut-graph></canvas>
             </div>
             <p class="add-top-10">Team Defend</p>
         </div>

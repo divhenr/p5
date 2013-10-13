@@ -25,13 +25,7 @@ window.angular.module('mean.team').controller('MyTeamController', ['$scope','$ro
 		$scope.findOne = function () {
   			Team.get({ teamId: $routeParams.teamId }, function (team) {
     			$scope.team = team;
-    			var totalDefend = 0, totalAttack = 0;
-		      	$.each(team.players, function(){
-	      			totalAttack += this.attack;
-	      			totalDefend += this.defend;
-		      	});
-	      		team.totalDefend = totalDefend / team.players.length;
-	      		team.totalAttack = totalAttack / team.players.length;
+
   			});
 		};
 

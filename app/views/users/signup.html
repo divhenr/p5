@@ -1,0 +1,47 @@
+<% layout('/layouts/default') -%>
+
+<div class="row">
+    <div class="offset1 span5">
+        <a href="/auth/facebook">
+            <img src="/img/icons/facebook.png">
+        </a>
+    </div>
+    <div class="span6" style="display: none">
+       <div class="fade in alert-block alert-error">
+           <a class="close" href="javascript:void(0)" data-dismiss="alert">x</a>
+
+       </div>
+    </div>
+    <form class="signup form-horizontal" action="/users" method="post">
+        <div class="control-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+                <input id="name" type="text" name="name" placeholder='Your full name' value="{{ user.name }}"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="team_name">Team Name</label>
+            <div class="controls">
+                <input id="team_name" type="text" name="team_name" placeholder='Your team name' value="{{ user.team_name }}"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input id="email" type="text" name="email" placeholder='Your Email' value="{{ user.email }}"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input id="password" type="password" name="password" placeholder='Password' value="{{ user.password }}"/>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+            &nbsp;or&nbsp;
+            <a class="show-login" href="/signin">Login</a>
+        </div>
+    </form>
+</div>

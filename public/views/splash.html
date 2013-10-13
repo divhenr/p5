@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>Your Page Title Here :)</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/skeleton.css">
-	<link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/splash.css">
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-
-</head>
-<body>
-
-
 
 	<!-- Primary Page Layout
 	================================================== -->
@@ -45,19 +5,25 @@
 	<div class="container" >
 	    <div class="sixteen columns alpha omega">
             <a href="/"><img src="../img/power-5-logo.png" class="home-logo-small" /></a>
-           <form class="sign-in">
+
+                <form class="sign-in" action="/auth/facebook" method="post">
+                    <input type="submit" class="fb-button" value="Sign In With Facebook">
+                </form>
+            <form name="loginForm" class="sign-in" action="/users/session" method="post">
                 <p class="light">Already Got A Team?</p>
-                <input type="email" name="email" value="Email Address">
-                <input type="password" name="password" value="Password">
-                <input type="submit" value="Sign In">
-                <input type="submit" class="fb-button" value="Sign In With Facebook">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Sign In" ng-disabled="loginForm.$invalid">
             </form>
+
             <hr />
 	    </div>
         <div class="eight columns alpha">
             <div class="eight columns alpha omega">
                 <h1>5 Vs the World</h1>
-                <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat accumsan tempus. Integer iaculis nunc eu lectus dapibus porttitor. Pellentesque id mi lacinia magna adipiscing sagittis.</p>
+                <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas 
+placerat accumsan tempus. Integer iaculis nunc eu lectus dapibus 
+porttitor. Pellentesque id mi lacinia magna adipiscing sagittis.</p>
             </div>
             <div class="two columns alpha step mobile-hide">
                 <img src="../img/home-step-1.png" class="scale-with-grid" />
@@ -73,28 +39,24 @@
             </div>
         </div>
         <div class="eight columns omega">
-            <div class="eight columns alpha omega">
-                <form>
-                    <input type="text" name="name" value="Your Full name">
-                    <input type="text" name="teamname" value="Team name">
-                    <p class="light">Team Name can be changed at a later date.</p>
-                    <hr />
-                </form>
-            </div>
-            <div class="four columns alpha">
-                <form>
-                    <input type="email" name="email" value="Email Address">
-                    <input type="password" name="password" value="Password">
-                    <input type="submit" value="Create Team With Email Address" class="stretch-width">
-                </form>
-            </div>
+            <form action="/users" method="post" name="createForm">
+                <div class="eight columns alpha omega">
+                        <input type="text" name="name" placeholder="Your Full name" required>
+                        <input type="text" name="teamname" placeholder="Team name" required>
+                        <p class="light">Team Name can be changed at a later date.</p>
+                        <hr />
+                </div>
+                <div class="four columns alpha">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="submit" ng-disabled="createForm.$invalid" value="Create Team With Email Address" class="stretch-width">
+                </div>
+            </form>
             <div class="four columns omega">
-                <input type="submit" value="Create Team With Facebook" class="fb-button stretch-width">
+                <form class="stretch-width" action="/auth/facebook" method="post">
+                    <input type="submit" class="fb-button stretch-width" value="Create Team With Facebook">
+                </form>
                 <p class="light">Don't Worry. We'll never post anything on your behalf.</p>
             </div>
         </div>
 	</div>
-<!-- End Document
-================================================== -->
-</body>
-</html>

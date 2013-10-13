@@ -1,0 +1,36 @@
+<% layout('/layouts/default') -%>
+
+<div class="row">
+    <div class="offset1 span5">
+        <a href="/auth/facebook">
+            <img src="/img/icons/facebook.png">
+        </a>
+    </div>
+    <div class="span6" style="display: none">
+        <div class="fade in alert-block alert-error">
+            <a class="close" href="javascript:void(0)" data-dismiss="alert">x</a>
+
+        </div>
+    </div>
+    <form class="signup form-horizontal" action="/users/session" method="post">
+
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input id="email" type="text" name="email" placeholder='Your Email' value="{{ user.email }}"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input id="password" type="password" name="password" placeholder='Password' value="{{ user.password }}"/>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Sign In</button>
+            &nbsp;or&nbsp;
+            <a class="show-login" href="/signup">Sign Up</a>
+        </div>
+    </form>
+</div>

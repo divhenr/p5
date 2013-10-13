@@ -7,6 +7,7 @@ var express = require('express'),
     helpers = require('view-helpers'),
     config = require('./config');
 
+
 module.exports = function(app, passport) {
     app.set('showStackError', true);
 
@@ -26,10 +27,19 @@ module.exports = function(app, passport) {
     if (process.env.NODE_ENV !== 'test') {
         app.use(express.logger('dev'));
     }
+//    app.set('view engine', 'jade');
+
+//    app.set('view engine', 'html');
+//    app.set('layout', 'layouts/default');
+//    //app.enable('view cache');
+//    app.engine('html', require('hogan-express'));
+//
+    app.set('view engine', 'html');
+    app.engine('html', require('ejs-locals'));
+
 
     //Set views path, template engine and default layout
     app.set('views', config.root + '/app/views');
-    app.set('view engine', 'jade');
 
     //Enable jsonp
     app.enable("jsonp callback");

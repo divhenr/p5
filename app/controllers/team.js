@@ -25,13 +25,22 @@ exports.show = function (req, res) {
 
 exports.team = function (req, res, next, id) {
 var team = mongoose.model('Team')
- 
+
   Team.findOne({ _id : id })
   .populate('players')
   .exec(function (err, team) {
     if (err) return next(err)
     if (!team) return next(new Error('Failed to load team ' + id))
-    req.team = team
+
+    req.team = {
+        id: team._id,
+        name: team.name,
+        rank: team.rank,
+        coins: team.coins,
+        totalattack: team.total_attack,
+        totaldefend: team.total_defend,
+        players: team.players
+    };
     next()
   })
 }

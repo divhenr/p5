@@ -84,16 +84,15 @@ module.exports = function(app, passport, auth) {
 
   // team routes
   var teams = require('../app/controllers/team')
-  app.get('/teams', teams.all)
+  app.get('/teams', teams.all, auth.requiresLogin)
   app.post('/teams', auth.requiresLogin, teams.create)
-  app.get('/teams/:teamId', teams.show)
+  app.get('/teams/:teamId', auth.requiresLogin, teams.show)
   app.put('/teams/:teamId', auth.requiresLogin, teams.update)
   app.del('/teams/:teamId', auth.requiresLogin, teams.destroy)
-  app.param('teamId', teams.team)
+  app.param('teamId', auth.requiresLogin, teams.team)
     
 
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
-
 };

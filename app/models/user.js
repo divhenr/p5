@@ -22,6 +22,7 @@ var UserSchema = new Schema({
     twitter: {},
     github: {},
     google: {},
+    team_name : String,
     team : {type: Schema.ObjectId, ref: 'Team'}
 });
 

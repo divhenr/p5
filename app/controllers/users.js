@@ -53,7 +53,6 @@ exports.session = function(req, res) {
  */
 exports.create = function(req, res) {
     var user = new User(req.body);
-
     user.provider = 'local'
 
   Player.find({"team":null}).limit(5).exec(
@@ -62,7 +61,7 @@ exports.create = function(req, res) {
         return res.redirect('/error');
       }
       var team = new Team({
-        name: user.name + " - Team",
+        name: user.team_name,
         players: players
       });
       team.save();
